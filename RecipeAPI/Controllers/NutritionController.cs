@@ -33,7 +33,7 @@ namespace RecipeAPI.Controllers
         public async Task<Response> GetNutrition()
         {
             Response a = new Response();
-            if (_context.Nutrition == null)
+            if (_context.Nutrition == null || _context.Recipes.Count() == 0)
             {
                 //a.statusCode = 404;
                 a.statusCode = NotFound().StatusCode;

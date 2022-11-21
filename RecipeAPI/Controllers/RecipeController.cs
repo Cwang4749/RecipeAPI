@@ -33,7 +33,7 @@ namespace RecipeAPI.Controllers
         public async Task<Response> GetRecipes()
         {
             Response a = new Response();
-            if(_context.Recipes == null)
+            if(_context.Recipes == null || _context.Recipes.Count() == 0)
             {
                 //a.statusCode = 404;
                 a.statusCode = NotFound().StatusCode;
